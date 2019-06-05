@@ -65,6 +65,9 @@
 					<noDeploy>true</noDeploy>
 					<squash>true</squash>
 					<scmCommentPrefix>[RELEASE] </scmCommentPrefix>
+					<pushFeatures>true</pushFeatures>
+					<pushHotfixes>true</pushHotfixes>
+					<pushReleases>true</pushReleases>
 				</configuration>
 			</plugin>
 			<plugin>
