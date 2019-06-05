@@ -50,7 +50,7 @@
 			<plugin>
 				<groupId>external.atlassian.jgitflow</groupId>
 				<artifactId>jgitflow-maven-plugin</artifactId>
-				<version>1.0-m5.1</version>
+				<version>1.0-m4.3</version>
 				<configuration>
 					<flowInitContext>
 						<masterBranchName>master</masterBranchName>
@@ -62,7 +62,7 @@
 					</flowInitContext>
 					<username>junker52</username>
 					<password>1776George.</password>
-					<noDeploy>false</noDeploy>
+					<noDeploy>true</noDeploy>
 					<squash>true</squash>
 					<scmCommentPrefix>[RELEASE] </scmCommentPrefix>
 				</configuration>
