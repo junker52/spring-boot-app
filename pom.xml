@@ -68,6 +68,7 @@
 					<pushFeatures>true</pushFeatures>
 					<pushHotfixes>true</pushHotfixes>
 					<pushReleases>true</pushReleases>
+					<noFeatureBuild>true</noFeatureBuild>
 				</configuration>
 			</plugin>
 			<plugin>
