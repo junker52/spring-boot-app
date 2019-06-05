@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 import pock.industrialisation.model.Greeting;
 
 @RestController
-@RequestMapping("/hello")
-public class WelcomeController {
+@RequestMapping("/bye")
+public class ByeController {
 	
 	@GetMapping
 	public Greeting seyHello() {
-		Greeting greeting = new Greeting().builder().name("").message("Hi").build();
+		Greeting greeting = new Greeting().builder().name("").message("Bye bye").build();
 		return greeting;
 	}
+
 
 }

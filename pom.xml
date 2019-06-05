@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.5.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pock.industrialisation</groupId>
 	<artifactId>sampleApp</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>demo</name>
 	<description>Sample Spring Boot Project </description>
@@ -49,10 +50,31 @@
 	<build>
 		<plugins>
 			<plugin>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<createChecksum>true</createChecksum>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>sample-app-${project.version}</finalName>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>9743f51b597c-releases</name>
+			<url>http://localhost:8081/artifactory/demo-final</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>9743f51b597c-snapshots</name>
+			<url>http://localhost:8081/artifactory/demo-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
