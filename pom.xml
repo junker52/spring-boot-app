@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>pock.industrialisation</groupId>
 	<artifactId>sampleApp</artifactId>
-	<version>1.1.0-FINAL</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>demo</name>
 	<description>Sample Spring Boot Project </description>
@@ -50,10 +50,23 @@
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-install-plugin</artifactId>
-				<version>2.3.1</version>
+				<groupId>external.atlassian.jgitflow</groupId>
+				<artifactId>jgitflow-maven-plugin</artifactId>
+				<version>1.0-m5.1</version>
 				<configuration>
-					<createChecksum>true</createChecksum>
+					<flowInitContext>
+						<masterBranchName>master</masterBranchName>
+						<developBranchName>develop</developBranchName>
+						<featureBranchPrefix>feature-</featureBranchPrefix>
+						<releaseBranchPrefix>release-</releaseBranchPrefix>
+						<hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+						<versionTagPrefix>version-</versionTagPrefix>
+					</flowInitContext>
+					<username>junker52</username>
+					<password>1776George.</password>
+					<noDeploy>false</noDeploy>
+					<squash>true</squash>
+					<scmCommentPrefix>[RELEASE] </scmCommentPrefix>
 				</configuration>
 			</plugin>
 			<plugin>
