@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -11,7 +9,7 @@
 	</parent>
 	<groupId>pock.industrialisation</groupId>
 	<artifactId>sampleApp</artifactId>
-	<version>1.1.0-FINAL</version>
+	<version>1.1.0</version>
 	<packaging>war</packaging>
 	<name>demo</name>
 	<description>Sample Spring Boot Project </description>
@@ -50,10 +48,23 @@
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-install-plugin</artifactId>
-				<version>2.3.1</version>
+				<groupId>external.atlassian.jgitflow</groupId>
+				<artifactId>jgitflow-maven-plugin</artifactId>
+				<version>1.0-m5.1</version>
 				<configuration>
-					<createChecksum>true</createChecksum>
+					<flowInitContext>
+						<masterBranchName>master</masterBranchName>
+						<developBranchName>develop</developBranchName>
+						<featureBranchPrefix>feature-</featureBranchPrefix>
+						<releaseBranchPrefix>release-</releaseBranchPrefix>
+						<hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+						<versionTagPrefix>version-</versionTagPrefix>
+					</flowInitContext>
+					<username>junker52</username>
+					<password>1776George.</password>
+					<noDeploy>false</noDeploy>
+					<squash>true</squash>
+					<scmCommentPrefix>[RELEASE] </scmCommentPrefix>
 				</configuration>
 			</plugin>
 			<plugin>
